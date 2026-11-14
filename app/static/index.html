@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Счёт-сканер · демо</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div>
+        <h1>Счёт-сканер</h1>
+        <p class="brand-sub">Демо · вымышленная компания <span id="company">…</span></p>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <span class="engine" id="engine">…</span>
+      <select id="samples" aria-label="Добавить пример документа"></select>
+      <button class="btn" id="btn-upload" type="button">Загрузить документ</button>
+      <input type="file" id="file" accept=".pdf,.png,.jpg,.jpeg,application/pdf,image/png,image/jpeg" hidden>
+      <a class="btn primary" id="btn-export" href="/api/export.xlsx" title="Выгружаются подтверждённые документы">Выгрузить в Excel</a>
+    </div>
+  </header>
+
+  <div class="banner" id="banner" hidden></div>
+
+  <section class="stats" id="stats" aria-label="Показатели"></section>
+
+  <main class="layout">
+    <aside class="docs" aria-label="Документы">
+      <ul class="items" id="docs"></ul>
+    </aside>
+    <section class="preview" id="preview" aria-label="Просмотр документа"></section>
+    <section class="form" id="form" aria-live="polite"></section>
+  </main>
+
+  <footer class="foot">
+    <span>Все организации и реквизиты в демо вымышлены.</span>
+    <span class="foot-links">
+      <a class="link" href="/api/export.csv">CSV</a>
+      <a class="link" href="/api/export.json" target="_blank" rel="noopener">JSON</a>
+      <button class="link" id="btn-reset" type="button">Сбросить демо-данные</button>
+      <a class="link" href="/api/docs" target="_blank" rel="noopener">Документация API</a>
+    </span>
+  </footer>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+fastapi>=0.115
+uvicorn>=0.30
+pydantic>=2.7
+python-multipart>=0.0.9
+pdfplumber>=0.11
+openpyxl>=3.1
+
+# Нужен только для режима Claude (ENGINE=claude или auto при наличии ключа)
+anthropic>=2.8
+
+# Тесты
+pytest>=8
+httpx>=0.27
